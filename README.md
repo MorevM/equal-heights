@@ -1,36 +1,36 @@
-# @morev/more-match-height
+# @morev/equal-heights
 
-![Stability of "master" branch](https://img.shields.io/github/workflow/status/MorevM/more-match-height/Build/master)
+![Stability of "master" branch](https://img.shields.io/github/workflow/status/MorevM/equal-heights/Build/master)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-![Last commit](https://img.shields.io/github/last-commit/morevm/more-match-height)
-![Release version](https://img.shields.io/github/v/release/morevm/more-match-height?include_prereleases)
-![GitHub Release Date](https://img.shields.io/github/release-date/morevm/more-match-height)
-![Keywords](https://img.shields.io/github/package-json/keywords/morevm/more-match-height)
+![Last commit](https://img.shields.io/github/last-commit/morevm/equal-heights)
+![Release version](https://img.shields.io/github/v/release/morevm/equal-heights?include_prereleases)
+![GitHub Release Date](https://img.shields.io/github/release-date/morevm/equal-heights)
+![Keywords](https://img.shields.io/github/package-json/keywords/morevm/equal-heights)
 
 ## Installation
 
 ### Using `yarn`
 
 ```bash
-yarn add @morev/more-match-height
+yarn add @morev/equal-heights
 ```
 
 ### Using `npm`
 
 ```bash
-npm install @morev/more-match-height
+npm install @morev/equal-heights
 ```
 
 ### Using `pnpm`
 
 ```bash
-pnpm add @morev/more-match-height
+pnpm add @morev/equal-heights
 ```
 
 ## Usage
 
 ```js
-import { MoreMatchHeight } from '@morev/more-match-height';
+import { MoreMatchHeight } from '@morev/equal-heights';
 
 const matchHeight = new MoreMatchHeight({
   /* custom options for all groups of elements (optional) */
@@ -46,7 +46,7 @@ matchHeight.add([
 
 ```vue
 <template>
-  <div v-more-match-height="'.item'">
+  <div v-equal-heights="'.item'">
     <div class="item">...</div>
     <div class="item">...</div>
     <div class="item">...</div>
@@ -54,11 +54,11 @@ matchHeight.add([
 </template>
 
 <script>
-  import { MoreMatchHeight } from '@morev/more-match-height/vue';
+  import { MoreMatchHeight } from '@morev/equal-heights/vue';
 
   export default {
     directives: {
-      'more-match-height': MoreMatchHeight,
+      'equal-heights': MoreMatchHeight,
     },
   };
   </script>
@@ -67,7 +67,7 @@ matchHeight.add([
 Global usage:
 
 ```js
-import MoreMatchHeight from '@morev/more-match-height/vue';
+import MoreMatchHeight from '@morev/equal-heights/vue';
 
 Vue.use(MoreMatchHeight);
 ```
@@ -167,7 +167,7 @@ Adds a new group(s) of elements and (optionally) its specific options.
 **Example:**
 
 ```js
-import { MoreMatchHeight } from '@morev/more-match-height';
+import { MoreMatchHeight } from '@morev/equal-heights';
 
 const matchHeight = new MoreMatchHeight();
 
@@ -197,7 +197,7 @@ Removes the elements from the stack.
 **Example:**
 
 ```js
-import { MoreMatchHeight } from '@morev/more-match-height';
+import { MoreMatchHeight } from '@morev/equal-heights';
 
 const matchHeight = new MoreMatchHeight();
 
@@ -226,7 +226,7 @@ Updates the registered elements state.
 **Example:**
 
 ```js
-import { MoreMatchHeight } from '@morev/more-match-height';
+import { MoreMatchHeight } from '@morev/equal-heights';
 
 const matchHeight = new MoreMatchHeight();
 
@@ -255,7 +255,7 @@ Restores the initial state of all the registered elements and removes it from th
 **Example:**
 
 ```js
-import { MoreMatchHeight } from '@morev/more-match-height';
+import { MoreMatchHeight } from '@morev/equal-heights';
 
 const matchHeight = new MoreMatchHeight();
 

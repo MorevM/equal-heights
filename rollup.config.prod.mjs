@@ -18,7 +18,7 @@ const esm = (entry) => ({
 	},
 	external: [
 		'@morev/helpers',
-		'@morev/more-match-height',
+		'@morev/equal-heights',
 	],
 	plugins: [
 		resolve(),
@@ -37,7 +37,7 @@ const cjs = (entry) => ({
 	},
 	external: [
 		'@morev/helpers',
-		'@morev/more-match-height',
+		'@morev/equal-heights',
 	],
 	plugins: [
 		resolve(),
@@ -69,10 +69,10 @@ const umd = (entry, name) => ({
 });
 
 export default [
-	esm('more-match-height.js'),
-	esm('more-match-height-vue.js'),
-	cjs('more-match-height.js'),
-	cjs('more-match-height-vue.js'),
-	umd('more-match-height.js', 'MoreMatchHeight'),
-	umd('more-match-height-vue.js', 'MoreMatchHeight'),
+	esm('equal-heights.js'),
+	esm('equal-heights-vue.js'),
+	cjs('equal-heights.js'),
+	cjs('equal-heights-vue.js'),
+	umd('equal-heights.js', 'EqualHeights'),
+	umd('equal-heights-vue.js', 'EqualHeights'),
 ];

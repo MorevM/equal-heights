@@ -1,8 +1,9 @@
-import { MoreMatchHeight } from '../../../src/more-match-height.js';
+/* eslint-disable unicorn/filename-case */
+import { EqualHeights } from '../../../src/equal-heights.js';
 
-class MoreMatchHeightModel {
+class EqualHeightsModel {
 	/**
-	 * The working `MoreMatchHeight` instance.
+	 * The working `EqualHeights` instance.
 	 *
 	 * @protected
 	 */
@@ -11,16 +12,16 @@ class MoreMatchHeightModel {
 	/**
 	 * Initializes the class instance
 	 *
-	 * @param   {MoreMatchHeight}   [instance]   Initialized `MoreMatchHeight` instance.
+	 * @param   {EqualHeights}   [instance]   Initialized `EqualHeights` instance.
 	 */
 	constructor(instance) {
-		this._instance = instance ?? new MoreMatchHeight();
+		this._instance = instance ?? new EqualHeights();
 	}
 
 	/**
-	 * Returns the working `MoreMatchHeight` instance.
+	 * Returns the working `EqualHeights` instance.
 	 *
-	 * @returns   {MoreMatchHeight}
+	 * @returns   {EqualHeights}
 	 */
 	getInstance() {
 		return this._instance;
@@ -51,4 +52,4 @@ class MoreMatchHeightModel {
 	}
 }
 
-export { MoreMatchHeightModel };
+export { EqualHeightsModel };

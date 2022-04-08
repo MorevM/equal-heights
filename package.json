@@ -1,5 +1,5 @@
 {
-	"name": "@morev/more-match-height",
+	"name": "@morev/equal-heights",
 	"description": "The JavaScript plugin allows setting the equal height for different elements.",
 	"type": "module",
 	"version": "0.0.0",
@@ -16,17 +16,17 @@
 		"name": "Maxim Morev",
 		"email": "max.seainside@gmail.com"
 	},
-	"homepage": "https://github.com/MorevM/more-match-height#readme",
+	"homepage": "https://github.com/MorevM/equal-heights#readme",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/MorevM/more-match-height"
+		"url": "https://github.com/MorevM/equal-heights"
 	},
 	"keywords": [
 		"match",
 		"height",
 		"equal",
 		"match-height",
-		"matchHeight"
+		"equal-heights"
 	],
 	"files": [
 		"dist",
@@ -34,17 +34,17 @@
 	],
 	"exports": {
 		".": {
-			"import": "./dist/esm/more-match-height.js",
-			"require": "./dist/cjs/more-match-height.js",
-			"browser": "./dist/umd/more-match-height.js"
+			"import": "./dist/esm/equal-heights.js",
+			"require": "./dist/cjs/equal-heights.js",
+			"browser": "./dist/umd/equal-heights.js"
 		},
 		"./vue": {
-			"import": "./dist/esm/more-match-height-vue.js",
-			"require": "./dist/cjs/more-match-height-vue.js",
-			"browser": "./dist/umd/more-match-height-vue.js"
+			"import": "./dist/esm/equal-heights-vue.js",
+			"require": "./dist/cjs/equal-heights-vue.js",
+			"browser": "./dist/umd/equal-heights-vue.js"
 		}
 	},
-	"types": "./types/more-match-height.d.ts",
+	"types": "./types/equal-heights.d.ts",
 	"scripts": {
 		"dev": "yarn _compile:dev",
 		"build": "yarn _compile:prod",

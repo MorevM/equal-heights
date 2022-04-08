@@ -1,14 +1,14 @@
 import { randomInteger } from '@morev/helpers';
-import { MoreMatchHeight } from '../../../src/more-match-height.js';
-import { MoreMatchHeightModel } from '../../../__tests__/integration/models/more-match-height.model.js';
+import { EqualHeights } from '../../../src/equal-heights.js';
+import { EqualHeightsModel } from '../../../__tests__/integration/models/equalHeights.model.js';
 
-// MoreMatchHeight
-const matchHeight = new MoreMatchHeight();
+// EqualHeights
+const equalHeights = new EqualHeights();
 
 const updateOptions = () => {
-	matchHeight.reset();
+	equalHeights.reset();
 
-	if (!document.querySelector('[name="matchHeight"]').checked) {
+	if (!document.querySelector('[name="equalHeights"]').checked) {
 		return;
 	}
 
@@ -17,7 +17,7 @@ const updateOptions = () => {
 		return acc;
 	}, {});
 
-	matchHeight.add([
+	equalHeights.add([
 		{ selector: '[data-elem="i1"]', options },
 		{ selector: '[data-elem="i2"]', options },
 		{ selector: '[data-elem="i3"]', options },
@@ -30,7 +30,7 @@ const updateOptions = () => {
 updateOptions();
 
 document.addEventListener('change', ({ target }) => {
-	['matchHeight', 'byRows', 'resizeObserver', 'mutationObserver'].some((name) => {
+	['equalHeights', 'byRows', 'resizeObserver', 'mutationObserver'].some((name) => {
 		if (target.closest(`[name="${name}"]`)) {
 			updateOptions();
 			return true;
@@ -60,5 +60,5 @@ document.querySelector('[data-elem="add-item"]').addEventListener('click', funct
 
 // Test mode
 if ('Cypress' in window) {
-	window.testModel = new MoreMatchHeightModel(matchHeight);
+	window.testModel = new EqualHeightsModel(equalHeights);
 }

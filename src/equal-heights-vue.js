@@ -1,5 +1,5 @@
 import { isString, isArray } from '@morev/helpers';
-import { MoreMatchHeight as MatchHeight } from '@morev/more-match-height'; // eslint-disable-line import/no-unresolved
+import { MoreMatchHeight as MatchHeight } from '@morev/equal-heights'; // eslint-disable-line import/no-unresolved
 
 const matchHeight = new MatchHeight();
 const normalizeValue = (value) => (
@@ -24,7 +24,7 @@ const directive = {
 };
 
 const install = (Vue) => {
-	Vue.directive('more-match-height', directive);
+	Vue.directive('equal-heights', directive);
 };
 
 if (typeof window !== 'undefined' && window.Vue) {

@@ -12,7 +12,7 @@ import { debounce } from './utility/debounce.js';
 import { getScrollLimit } from './utility/get-scroll-limit.js';
 import { isDescendantOf } from './utility/is-descendant-of.js';
 
-class MoreMatchHeight {
+class EqualHeights {
 	/**
 	 * Default options.
 	 *
@@ -315,7 +315,7 @@ class MoreMatchHeight {
 	/**
 	 * Updates the registered elements state.
 	 *
-	 * @returns   {MoreMatchHeight}
+	 * @returns   {EqualHeights}
 	 */
 	update() {
 		this._setupElements();
@@ -328,7 +328,7 @@ class MoreMatchHeight {
 	 * @param     {string|string[]|object|object[]}   input   The input settings: elements selector, an array of elements selectors,
 	 *                                                        an object structured of {selector: string, options?: object}, or an array of such objects.
 	 *
-	 * @returns   {MoreMatchHeight}
+	 * @returns   {EqualHeights}
 	 */
 	add(input) {
 		this._registerElements(input);
@@ -343,7 +343,7 @@ class MoreMatchHeight {
 	 * @param     {string}                  selector   Selector of the elements being de-registered.
 	 * @param     {HTMLElement|undefined}   [parent]   Common parent element.
 	 *
-	 * @returns   {MoreMatchHeight}
+	 * @returns   {EqualHeights}
 	 */
 	remove(selector, parent) {
 		this._resetElements();
@@ -369,7 +369,7 @@ class MoreMatchHeight {
 	/**
 	 * Restores the initial state of all the registered elements and removes it from the stack.
 	 *
-	 * @returns   {MoreMatchHeight}
+	 * @returns   {EqualHeights}
 	 */
 	reset() {
 		this._resetElements();
@@ -381,4 +381,4 @@ class MoreMatchHeight {
 	}
 }
 
-export { MoreMatchHeight };
+export { EqualHeights };
