@@ -1,0 +1,38 @@
+@use 'more-sass' as *;
+@use '../variables.scss' as *;
+
+html {
+	position: relative;
+	overflow: auto;
+	overflow-x: hidden;
+}
+
+body {
+	position: relative;
+	display: flex; // fix IE flexbox min-height problem
+	color: $color-text-primary-main;
+	font-family: $font-primary;
+	font-size: $typo-default-fz;
+	line-height: $typo-default-lh;
+	background-color: $color-background-primary-main;
+	overflow: hidden;
+}
+
+#root {
+	position: relative;
+	display: flex;
+	flex: 0 0 auto;
+	flex-direction: column;
+	width: 100vw;
+	min-width: $layout-screen-min;
+	min-height: 100vh;
+}
+
+.a11y-label {
+	@include visually-hidden;
+}
+
+:focus-visible,
+.focus-visible {
+	outline: 3px solid $color-app-primary-main;
+}

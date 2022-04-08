@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<head>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+
+	<title>MoreMatchHeight — Playground</title>
+
+	<link rel="stylesheet" href="./build/main.css" />
+
+</head>
+<body>
+<div id="root">
+
+	<!-- Options -->
+	<div id="options" class="section-options">
+	<div class="section-options__wrapper base-wrapper">
+
+		<div class="section-options__controls">
+		<div class="section-options__controls-inner">
+
+			<label class="section-options__control">
+				<p>matchHeight</p>
+				<input type="checkbox" name="matchHeight" value="1" checked />
+			</label>
+
+			<label class="section-options__control">
+				<p>byRows</p>
+				<input type="checkbox" name="byRows" value="1" checked />
+			</label>
+
+			<label class="section-options__control">
+				<p>resizeObserver</p>
+				<input type="checkbox" name="resizeObserver" value="1" checked />
+			</label>
+
+			<label class="section-options__control">
+				<p>mutationObserver</p>
+				<input type="checkbox" name="mutationObserver" value="1" checked />
+			</label>
+
+		</div>
+		</div>
+
+	</div>
+	</div>
+
+	<!-- Preview -->
+	<div id="preview" class="section-preview">
+	<div class="section-preview__wrapper base-wrapper">
+
+		<!-- Multi-line simple items -->
+		<div class="simple-items">
+
+			<!-- 1 -->
+			<div class="simple-items__item" data-elem="i1">
+				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias at ducimus voluptatem sed eveniet quam tempora.</p>
+				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias at ducimus voluptatem sed eveniet.</p>
+			</div>
+
+			<!-- 2 -->
+			<div class="simple-items__item" data-elem="i1">
+				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias at ducimus voluptatem sed eveniet quam tempora.</p>
+			</div>
+
+			<!-- 3 -->
+			<div class="simple-items__item" data-elem="i1">
+				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias at ducimus voluptatem sed eveniet quam tempora laboriosam culpa dolores nostrum, accusamus doloribus.</p>
+			</div>
+
+			<!-- 4 -->
+			<div class="simple-items__item style-overflow" data-elem="i1">
+				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+				<p>Molestias at ducimus voluptatem sed eveniet quam tempora laboriosam culpa dolores nostrum.</p>
+				<p>Accusamus doloribus, perspiciatis rem velit quae natus odio deleniti. Repellat?</p>
+				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+				<p>Molestias at ducimus voluptatem sed eveniet quam tempora laboriosam culpa dolores nostrum.</p>
+				<p>Accusamus doloribus, perspiciatis rem velit quae natus odio deleniti. Repellat?</p>
+			</div>
+
+			<!-- 5 -->
+			<div class="simple-items__item" data-elem="i1">
+				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias at ducimus voluptatem sed eveniet quam tempora.</p>
+				<button type="button" class="simple-items__add-paragraph-control" data-elem="add-paragraph">Add paragraph</button>
+			</div>
+
+			<!-- 6 -->
+			<div class="simple-items__item" data-elem="i1">
+				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+				<p>Molestias at ducimus voluptatem sed eveniet quam tempora laboriosam culpa dolores nostrum.</p>
+			</div>
+
+			<!-- 7 -->
+			<div class="simple-items__item" data-elem="i1">
+				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+				<p>Molestias at ducimus voluptatem sed eveniet quam tempora.</p>
+			</div>
+
+			<!-- Add new -->
+			<div class="simple-items__add-item">
+				<button type="button" title="Add item" class="simple-items__add-item-control" data-elem="add-item"><span class="a11y-label">Add item</span></button>
+			</div>
+
+		</div>
+
+		<hr />
+
+		<!-- Fixed height items -->
+		<div class="simple-items">
+			<div class="simple-items__item" style="height: 100px;" data-elem="i2">Height: 100px</div>
+			<div class="simple-items__item" style="min-height: 85px;" data-elem="i2">Height: 85px</div>
+			<div class="simple-items__item" style="min-height: 130px;" data-elem="i2">Height: 130px</div>
+			<div class="simple-items__item" style="height: 70px;" data-elem="i2">Height: 70px</div>
+		</div>
+
+		<hr />
+
+		<!-- Nested items -->
+		<div class="simple-items style-wide">
+
+			<div class="simple-items__item" data-elem="i3">
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet quia omnis soluta enim, numquam dolorum ipsam accusamus quas sed optio iusto.</p>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet quia omnis soluta enim, numquam dolorum ipsam accusamus quas sed optio iusto, doloribus possimus repudiandae nesciunt commodi magnam nostrum consequatur eaque.</p>
+			</div>
+
+			<div class="simple-items__item simple-items style-wide" data-elem="i3" style="align-items: end; grid-template-columns: repeat(2, 1fr);">
+				<div class="simple-items__item" data-elem="i4"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></div>
+				<div class="simple-items__item" data-elem="i4"><p>Lorem ipsum.</p></div>
+				<div class="simple-items__item" data-elem="i4"><p>Lorem ipsum.</p></div>
+				<div class="simple-items__item" data-elem="i4"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></div>
+				<div class="simple-items__item" data-elem="i4"><p>Lorem ipsum dolor sit amet.</p></div>
+				<div class="simple-items__item" data-elem="i4"><p>Lorem ipsum dolor sit amet.</p></div>
+			</div>
+
+		</div>
+
+		<hr />
+
+		<!-- Complicated items -->
+		<div class="complicated-items" data-elem="complicated-items">
+
+			<!-- 1 -->
+			<div class="complicated-items__item">
+				<div class="complicated-items__item-header" data-elem="header">
+					<div class="complicated-items__item-tags">
+						<span class="complicated-items__item-tag">Tag 1</span>
+						<span class="complicated-items__item-tag">Tag 2</span>
+						<span class="complicated-items__item-tag">Tag 3</span>
+						<span class="complicated-items__item-tag">Tag 4</span>
+						<span class="complicated-items__item-tag">Tag 5</span>
+					</div>
+				</div>
+				<div class="complicated-items__item-body">
+					<div class="complicated-items__item-image-mock"></div>
+					<div class="complicated-items__item-content">
+						<div class="complicated-items__item-title" data-elem="title">Lorem ipsum dolor sit amet</div>
+						<div class="complicated-items__item-description"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p><p>Itaque veritatis animi deleniti explicabo repellat et ut dolorem ullam incidunt eos cupiditate officiis iste beatae, quae dolorum.</p></div>
+					</div>
+				</div>
+			</div>
+
+			<!-- 2 -->
+			<div class="complicated-items__item">
+				<div class="complicated-items__item-header" data-elem="header">
+					<div class="complicated-items__item-tags">
+						<span class="complicated-items__item-tag">Tag 1</span>
+						<span class="complicated-items__item-tag">Tag 2</span>
+					</div>
+				</div>
+				<div class="complicated-items__item-body">
+					<div class="complicated-items__item-image-mock"></div>
+					<div class="complicated-items__item-content">
+						<div class="complicated-items__item-title" data-elem="title">Lorem ipsum dolor sit amet consectetur adipisicing elit</div>
+						<div class="complicated-items__item-description"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p><p>Itaque veritatis animi deleniti explicabo repellat.</p></div>
+					</div>
+				</div>
+			</div>
+
+			<!-- 3 -->
+			<div class="complicated-items__item">
+				<div class="complicated-items__item-header" data-elem="header"></div>
+				<div class="complicated-items__item-body">
+					<div class="complicated-items__item-image-mock"></div>
+					<div class="complicated-items__item-content">
+						<div class="complicated-items__item-title" data-elem="title">Lorem ipsum</div>
+						<div class="complicated-items__item-description"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p><p>Itaque veritatis animi deleniti explicabo repellat et ut dolorem.</p><p>Ullam incidunt eos cupiditate officiis iste beatae, quae dolorum.</p></div>
+					</div>
+				</div>
+			</div>
+
+			<!-- 4 -->
+			<div class="complicated-items__item">
+				<div class="complicated-items__item-header" data-elem="header">
+					<div class="complicated-items__item-tags">
+						<span class="complicated-items__item-tag">Tag 1</span>
+						<span class="complicated-items__item-tag">Tag 2</span>
+						<span class="complicated-items__item-tag">Tag 3</span>
+					</div>
+				</div>
+				<div class="complicated-items__item-body">
+					<div class="complicated-items__item-image-mock"></div>
+					<div class="complicated-items__item-content">
+						<div class="complicated-items__item-title" data-elem="title">Lorem ipsum dolor sit amet</div>
+						<div class="complicated-items__item-description"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></div>
+					</div>
+				</div>
+			</div>
+
+			<!-- 5 -->
+			<div class="complicated-items__item">
+				<div class="complicated-items__item-header" data-elem="header">
+					<div class="complicated-items__item-tags">
+						<span class="complicated-items__item-tag">Tag 1</span>
+						<span class="complicated-items__item-tag">Tag 2</span>
+					</div>
+				</div>
+				<div class="complicated-items__item-body">
+					<div class="complicated-items__item-image-mock"></div>
+					<div class="complicated-items__item-content">
+						<div class="complicated-items__item-title" data-elem="title">Lorem ipsum dolor sit amet consectetur adipisicing elit</div>
+						<div class="complicated-items__item-description"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p><p>Itaque veritatis animi deleniti explicabo repellat.</p></div>
+					</div>
+				</div>
+			</div>
+
+			<!-- 6 -->
+			<div class="complicated-items__item">
+				<div class="complicated-items__item-header" data-elem="header"></div>
+				<div class="complicated-items__item-body">
+					<div class="complicated-items__item-image-mock"></div>
+					<div class="complicated-items__item-content">
+						<div class="complicated-items__item-title" data-elem="title">Lorem ipsum</div>
+						<div class="complicated-items__item-description"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p><p>Itaque veritatis animi deleniti explicabo repellat et ut dolorem.</p><p>Ullam incidunt eos cupiditate officiis iste beatae, quae dolorum.</p></div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+	</div>
+
+	<!-- Scripts -->
+	<script src="./build/main.js"></script>
+
+</div>
+</body>
+</html>

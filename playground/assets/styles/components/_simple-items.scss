@@ -1,0 +1,135 @@
+@use 'more-sass' as *;
+@use '../variables.scss' as *;
+
+.simple-items {
+	$b: #{&};
+	$add-item-control: #{&}__add-item-control;
+
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 15px;
+	align-items: start;
+
+	&.style-wide {
+		grid-template-columns: 1fr;
+
+		@media (min-width: 1024px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@media (min-width: 1024px) {
+		grid-template-columns: repeat(4, 1fr);
+	}
+
+	&__item {
+		padding: 1em;
+		color: #ffffff;
+		border: 5px solid transparent;
+
+		&:nth-child(6n+1) {
+			background-color: #0a96cd;
+			border-color: shade(#0a96cd, 20%);
+		}
+
+		&:nth-child(6n+2) {
+			background-color: #694b3c;
+			border-color: shade(#694b3c, 20%);
+		}
+
+		&:nth-child(6n+3) {
+			background-color: #cd3241;
+			border-color: shade(#cd3241, 20%);
+		}
+
+		&:nth-child(6n+4) {
+			background-color: #eb6941;
+			border-color: shade(#eb6941, 20%);
+		}
+
+		&:nth-child(6n+5) {
+			background-color: #505f9b;
+			border-color: shade(#505f9b, 20%);
+		}
+
+		&:nth-child(6n+6) {
+			background-color: #377d46;
+			border-color: shade(#377d46, 20%);
+		}
+
+		&.style-overflow {
+			max-height: 240px;
+			overflow: hidden;
+			overflow-y: auto;
+		}
+
+		p {
+			margin-bottom: 1em;
+		}
+
+		:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__add-item {
+		display: flex;
+		align-self: stretch;
+		padding: 15px;
+	}
+
+	&__add-item-control {
+		@include reset-button;
+		@include box(70px);
+		position: relative;
+		margin: auto;
+		border: 4px solid;
+		border-radius: 50%;
+		opacity: .75;
+		transition: opacity .2s ease-out 0s;
+		cursor: pointer;
+
+		&::before,
+		&::after {
+			@include pseudo;
+			@include transform-center;
+			background-color: currentColor;
+			border-radius: 2px;
+
+			@at-root #{$add-item-control}::before {
+				@include box(30px, 4px);
+			}
+
+			@at-root #{$add-item-control}::after {
+				@include box(4px, 30px);
+			}
+		}
+
+		&:hover,
+		&:focus-visible {
+			opacity: 1;
+		}
+
+		&:active {
+			transform: scale(.99);
+		}
+	}
+
+	&__add-paragraph-control {
+		@include reset-button;
+		display: inline-block;
+		line-height: 1.2;
+		border-bottom: 1px dotted;
+		transition: border-color .2s ease-out 0s;
+		cursor: pointer;
+
+		&:hover,
+		&:focus-visible {
+			border-color: transparent;
+		}
+
+		&:active {
+			transform: translateY(1px);
+		}
+	}
+}

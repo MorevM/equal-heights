@@ -1,0 +1,13 @@
+@use 'more-sass' as *;
+@use '../variables.scss' as *;
+
+.section-preview {
+	$b: #{&};
+
+	flex: 0 0 auto;
+	width: 100%;
+
+	hr {
+		@include margin(20px null);
+	}
+}

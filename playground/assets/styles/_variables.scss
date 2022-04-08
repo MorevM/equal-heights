@@ -1,0 +1,26 @@
+@use 'more-sass' as *;
+
+/* COLORS */
+$_palette-primary: #148cd7;
+$_palette-white: #ffffff;
+$_palette-black: #283237;
+$_palette-grey: #808080;
+
+// Colorscheme
+$color-app-primary-main: $_palette-primary;
+$color-app-primary-accent: $_palette-white;
+$color-background-primary-main: $_palette-black;
+$color-background-secondary-main: $_palette-white;
+$color-text-primary-main: $_palette-white;
+$color-text-secondary-main: $_palette-black;
+
+/* FONTS */
+$font-primary: system-ui;
+
+/* TYPOGRAPHY */
+$typo-default-fz: 14px;
+$typo-default-lh: 1.5;
+
+/* LAYOUT */
+$layout-screen-min: 320px;
+$layout-screen-max: 1280px;

@@ -1,0 +1,13 @@
+{
+	"baseUrl": "http://localhost:3001",
+	"integrationFolder": "./__tests__/integration/tests",
+	"fixturesFolder": "./__tests__/__fixtures__",
+	"supportFile": "./__tests__/integration/bootstrap.js",
+	"pluginsFile": false,
+	"screenshotsFolder": "./tmp/cypress/screenshots",
+	"downloadsFolder": "./tmp/cypress/downloads",
+	"videosFolder": "./tmp/cypress/videos",
+	"video": false,
+	"viewportWidth": 1280,
+	"viewportHeight": 720
+}
