@@ -7,7 +7,7 @@
  *
  * @returns   {Function}
  */
-export const debounce = (cb, delay = 100, initial = false) => {
+export const debounce = (cb, delay = 60, initial = false) => {
 	let timer;
 	let started = false;
 

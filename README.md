@@ -30,13 +30,13 @@ pnpm add @morev/equal-heights
 ## Usage
 
 ```js
-import { MoreMatchHeight } from '@morev/equal-heights';
+import { EqualHeights } from '@morev/equal-heights';
 
-const matchHeight = new MoreMatchHeight({
+const equalHeights = new EqualHeights({
   /* custom options for all groups of elements (optional) */
 });
 
-matchHeight.add([
+equalHeights.add([
   { selector: '.some-selector', options: { /* custom options for this group of elements (optional) */ } },
   { selector: '.another-selector' },
 ]);
@@ -54,12 +54,10 @@ matchHeight.add([
 </template>
 
 <script>
-  import { MoreMatchHeight } from '@morev/equal-heights/vue';
+  import { EqualHeights } from '@morev/equal-heights/vue';
 
   export default {
-    directives: {
-      'equal-heights': MoreMatchHeight,
-    },
+    directives: { EqualHeights },
   };
   </script>
 ```
@@ -67,9 +65,9 @@ matchHeight.add([
 Global usage:
 
 ```js
-import MoreMatchHeight from '@morev/equal-heights/vue';
+import EqualHeights from '@morev/equal-heights/vue';
 
-Vue.use(MoreMatchHeight);
+Vue.use(EqualHeights);
 ```
 
 ## Options
@@ -162,18 +160,18 @@ Adds a new group(s) of elements and (optionally) its specific options.
 
 **Returns:**
 
-`MoreMatchHeight` - The class instance.
+`EqualHeights` - The class instance.
 
 **Example:**
 
 ```js
-import { MoreMatchHeight } from '@morev/equal-heights';
+import { EqualHeights } from '@morev/equal-heights';
 
-const matchHeight = new MoreMatchHeight();
+const equalHeights = new EqualHeights();
 
-matchHeight.add('.selector-one');
-matchHeight.add({ selector: '.selector-two', options: { /* custom options (optional) */ } });
-matchHeight.add([
+equalHeights.add('.selector-one');
+equalHeights.add({ selector: '.selector-two', options: { /* custom options (optional) */ } });
+equalHeights.add([
   { selector: '.selector-three', options: { /* custom options (optional) */ } },
   { selector: '.selector-four' },
 ]);
@@ -192,23 +190,24 @@ Removes the elements from the stack.
 
 **Returns:**
 
-`MoreMatchHeight` - The class instance.
+`EqualHeights` - The class instance.
 
 **Example:**
 
 ```js
-import { MoreMatchHeight } from '@morev/equal-heights';
+import { EqualHeights } from '@morev/equal-heights';
 
-const matchHeight = new MoreMatchHeight();
+const equalHeights = new EqualHeights();
 
-matchHeight.add([
+equalHeights.add([
   { selector: '.some-selector', options: { parent: document.querySelector('.parent-selector') } },
   { selector: '.another-selector' },
 ]);
 
 // ...
 
-matchHeight.remove('.some-selector', document.querySelector('.parent-selector')); // only the `.another-selector` elements are being processed now
+equalHeights.remove('.some-selector', document.querySelector('.parent-selector'));
+// only the `.another-selector` elements are being processed now
 ```
 
 ### update
@@ -221,23 +220,23 @@ Updates the registered elements state.
 
 **Returns:**
 
-`MoreMatchHeight` - The class instance.
+`EqualHeights` - The class instance.
 
 **Example:**
 
 ```js
-import { MoreMatchHeight } from '@morev/equal-heights';
+import { EqualHeights } from '@morev/equal-heights';
 
-const matchHeight = new MoreMatchHeight();
+const equalHeights = new EqualHeights();
 
-matchHeight.add([
+equalHeights.add([
   { selector: '.some-selector' },
   { selector: '.another-selector' },
 ]);
 
 // ...
 
-matchHeight.update(); // manually update all the registered elements sizes
+equalHeights.update(); // manually update all the registered elements sizes
 ```
 
 ### reset
@@ -250,21 +249,21 @@ Restores the initial state of all the registered elements and removes it from th
 
 **Returns:**
 
-`MoreMatchHeight` - The class instance.
+`EqualHeights` - The class instance.
 
 **Example:**
 
 ```js
-import { MoreMatchHeight } from '@morev/equal-heights';
+import { EqualHeights } from '@morev/equal-heights';
 
-const matchHeight = new MoreMatchHeight();
+const equalHeights = new EqualHeights();
 
-matchHeight.add([
+equalHeights.add([
   { selector: '.some-selector' },
   { selector: '.another-selector' },
 ]);
 
 // ...
 
-matchHeight.reset(); // there are no elements being processed now
+equalHeights.reset(); // there are no elements being processed now
 ```

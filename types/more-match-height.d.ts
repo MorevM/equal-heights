@@ -1,4 +1,4 @@
-declare namespace MoreMatchHeight {
+declare namespace EqualHeights {
 	interface IOptions {
 		byRows?: boolean;
 		isEnabled?: (window: Window) => boolean;
@@ -14,21 +14,16 @@ declare namespace MoreMatchHeight {
 
 }
 
-declare class MoreMatchHeight {
-	/**
-	 * Default options.
-	 */
-	protected _defaults: Required<MoreMatchHeight.IOptions>;
-
+declare class EqualHeights {
 	/**
 	 * Working options.
 	 */
-	protected _options: Required<MoreMatchHeight.IOptions>;
+	protected _options: Required<EqualHeights.IOptions>;
 
 	/**
 	 * The stack of elements and options being processed.
 	 */
-	protected _stack: MoreMatchHeight.IInput[];
+	protected _stack: EqualHeights.IInput[];
 
 	/**
 	 * ResizeObserver storage.
@@ -43,7 +38,7 @@ declare class MoreMatchHeight {
 	/**
 	 * Initializes the class instance.
 	 */
-	public constructor(options?: MoreMatchHeight.IOptions);
+	public constructor(options?: EqualHeights.IOptions);
 
 	/**
 	 * Retrieves the array of elements by a given selector using a given common parent element.
@@ -74,7 +69,7 @@ declare class MoreMatchHeight {
 	 *
 	 * @param      input   The input settings: elements selector, an array of elements selectors, an object structured of {selector: string, options?: object}, or an array of such objects.
 	 */
-	protected _registerElements(input: string | string[] | MoreMatchHeight.IInput | MoreMatchHeight.IInput[]): void;
+	protected _registerElements(input: string | string[] | EqualHeights.IInput | EqualHeights.IInput[]): void;
 
 	/**
 	 * Initializes newly registered elements.
@@ -107,14 +102,14 @@ declare class MoreMatchHeight {
 	/**
 	 * Updates the registered elements state.
 	 */
-	public update(): MoreMatchHeight;
+	public update(): EqualHeights;
 
 	/**
 	 * Adds a new group(s) of elements and (optionally) its specific options.
 	 *
 	 * @param      input   The input settings: elements selector, an object structured of {selector: string, options?: object}, or an array of such objects.
 	 */
-	public add(input: string | string[] | MoreMatchHeight.IInput | MoreMatchHeight.IInput[]): MoreMatchHeight;
+	public add(input: string | string[] | EqualHeights.IInput | EqualHeights.IInput[]): EqualHeights;
 
 	/**
 	 * Removes the elements from the stack.
@@ -122,12 +117,12 @@ declare class MoreMatchHeight {
 	 * @param      selector   Selector of the elements being de-registered.
 	 * @param      parent     Common parent element.
 	 */
-	public remove(selector: string, parent?: HTMLElement): MoreMatchHeight;
+	public remove(selector: string, parent?: HTMLElement): EqualHeights;
 
 	/**
 	 * Restores the initial state of all the registered elements and removes it from the stack.
 	 */
-	public reset(): MoreMatchHeight;
+	public reset(): EqualHeights;
 }
 
-export { MoreMatchHeight };
+export { EqualHeights };

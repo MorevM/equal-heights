@@ -12,21 +12,16 @@ import { debounce } from './utility/debounce.js';
 import { getScrollLimit } from './utility/get-scroll-limit.js';
 import { isDescendantOf } from './utility/is-descendant-of.js';
 
-class EqualHeights {
-	/**
-	 * Default options.
-	 *
-	 * @protected
-	 */
-	_defaults = {
-		byRows: true,
-		isEnabled: () => true,
-		isDisabled: () => false,
-		resizeObserver: true,
-		mutationObserver: true,
-		parent: document.body,
-	};
+const DEFAULTS = {
+	byRows: true,
+	isEnabled: () => true,
+	isDisabled: () => false,
+	resizeObserver: true,
+	mutationObserver: true,
+	parent: document.body,
+};
 
+class MoreMatchHeight {
 	/**
 	 * Working options.
 	 *
@@ -69,7 +64,7 @@ class EqualHeights {
 	 * @param   {HTMLElement}   [options.parent]             Common parent element of a given elements.
 	 */
 	constructor(options = {}) {
-		this._options = defaults(this._defaults, options);
+		this._options = defaults(DEFAULTS, options);
 
 		this._initObservers();
 		this._attachEvents();
@@ -197,8 +192,8 @@ class EqualHeights {
 			const height = el.style.getPropertyValue('height');
 			const minHeight = el.style.getPropertyValue('min-height');
 
-			if (!!height) el.dataset.mmhHeight = height;
-			if (!!minHeight) el.dataset.mmhMinHeight = minHeight;
+			if (!!height) el.dataset.ehHeight = height;
+			if (!!minHeight) el.dataset.ehMinHeight = minHeight;
 
 			if (observe) this._resizeObserver.observe(el);
 		});
@@ -216,8 +211,8 @@ class EqualHeights {
 			el.style.removeProperty('min-height');
 			el.style.removeProperty('height');
 
-			if ('mmhHeight' in el.dataset) el.style.setProperty('height', el.dataset.mmhHeight);
-			if ('mmhMinHeight' in el.dataset) el.style.setProperty('min-height', el.dataset.mmhMinHeight);
+			if ('ehHeight' in el.dataset) el.style.setProperty('height', el.dataset.ehHeight);
+			if ('ehMinHeight' in el.dataset) el.style.setProperty('min-height', el.dataset.ehMinHeight);
 		});
 	}
 
@@ -283,9 +278,7 @@ class EqualHeights {
 					return acc;
 				}, {}));
 
-				if (isEmpty(queries)) {
-					return;
-				}
+				if (isEmpty(queries)) return;
 
 				const checkNode = (node) => (
 					isNode(node) && queries.some(([selector, parents]) => (
@@ -300,9 +293,7 @@ class EqualHeights {
 					|| [...mutation.removedNodes].some((node) => checkNode(node))
 				));
 
-				if (needUpdate) {
-					this.update();
-				}
+				needUpdate && this.update();
 			})
 			: { observe: noop, disconnect: noop };
 

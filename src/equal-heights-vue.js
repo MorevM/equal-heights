@@ -1,7 +1,7 @@
 import { isString, isArray } from '@morev/helpers';
-import { MoreMatchHeight as MatchHeight } from '@morev/equal-heights'; // eslint-disable-line import/no-unresolved
+import { EqualHeights } from '@morev/equal-heights'; // eslint-disable-line import/no-unresolved
 
-const matchHeight = new MatchHeight();
+const equalHeights = new EqualHeights();
 const normalizeValue = (value) => (
 	isString(value)
 		? [{ selector: value }]
@@ -13,12 +13,12 @@ const normalizeValue = (value) => (
 const directive = {
 	bind(el, { value }) {
 		normalizeValue(value).forEach(({ selector, options = {} }) => {
-			matchHeight.add({ selector, options: { ...options, parent: el } });
+			equalHeights.add({ selector, options: { ...options, parent: el } });
 		});
 	},
 	unbind(el, { value }) {
 		normalizeValue(value).forEach(({ selector }) => {
-			matchHeight.remove(selector, el);
+			equalHeights.remove(selector, el);
 		});
 	},
 };
@@ -32,4 +32,4 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default { install };
-export { directive as MoreMatchHeight };
+export { directive as EqualHeights };
