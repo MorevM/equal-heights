@@ -10,7 +10,6 @@ import {
 } from '@morev/helpers';
 import { debounce } from './utility/debounce.js';
 import { getScrollLimit } from './utility/get-scroll-limit.js';
-import { isDescendantOf } from './utility/is-descendant-of.js';
 
 const DEFAULTS = {
 	byRows: true,
@@ -283,7 +282,7 @@ class MoreMatchHeight {
 				const checkNode = (node) => (
 					isNode(node) && queries.some(([selector, parents]) => (
 						node.matches(selector) && parents.some((parent) => (
-							parent === this._options.parent || isDescendantOf(node, parent)
+							parent === this._options.parent || parent.contains(node)
 						))
 					))
 				);
