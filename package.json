@@ -3,7 +3,7 @@
 	"description": "The JavaScript plugin allows setting the equal height for different elements.",
 	"type": "module",
 	"version": "0.0.0",
-	"private": true,
+	"private": false,
 	"engines": {
 		"node": "^14.17.0 || >=16.0.0"
 	},
