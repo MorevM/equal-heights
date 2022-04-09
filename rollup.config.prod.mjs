@@ -23,7 +23,7 @@ const esm = (entry) => ({
 	plugins: [
 		resolve(),
 		commonjs(),
-		terser(),
+		// terser(),
 	],
 });
 
@@ -42,7 +42,7 @@ const cjs = (entry) => ({
 	plugins: [
 		resolve(),
 		commonjs(),
-		terser(),
+		// terser(),
 	],
 });
 
@@ -64,7 +64,7 @@ const umd = (entry, name) => ({
 			presets: [['@babel/preset-env', { useBuiltIns: false }]],
 			plugins: [['@babel/plugin-transform-runtime', { corejs: 3 }]],
 		}),
-		terser(),
+		// terser(),
 	],
 });
 
