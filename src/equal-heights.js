@@ -7,8 +7,8 @@ import {
 	isNode,
 	getElementOffset,
 	getWindowScroll,
+	debounce,
 } from '@morev/helpers';
-import { debounce } from './utility/debounce.js';
 import { getScrollLimit } from './utility/get-scroll-limit.js';
 
 const DEFAULTS = {
