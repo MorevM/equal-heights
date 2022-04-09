@@ -80,7 +80,10 @@ class MoreMatchHeight {
 	 * @protected
 	 */
 	_getElements(selector, parent) {
-		return [...(parent ?? this._options.parent).querySelectorAll(selector)];
+		const actualParent = (parent ?? this._options.parent);
+		return selector === '> *'
+			? [...actualParent.children]
+			: [...actualParent.querySelectorAll(selector)];
 	}
 
 	/**
@@ -281,7 +284,7 @@ class MoreMatchHeight {
 
 				const checkNode = (node) => (
 					isNode(node) && queries.some(([selector, parents]) => (
-						node.matches(selector) && parents.some((parent) => (
+						(selector === '> *' || node.matches(selector)) && parents.some((parent) => (
 							parent === this._options.parent || parent.contains(node)
 						))
 					))

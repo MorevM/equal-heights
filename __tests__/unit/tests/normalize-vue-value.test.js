@@ -3,6 +3,7 @@ import { normalizeVueValue } from '../../../src/utility/normalize-vue-value.js';
 describe('normalize-vue-value', () => {
 	it('Returns direct children selector for empty input', () => {
 		expect(normalizeVueValue()).toStrictEqual([{ selector: '> *' }]);
+		expect(normalizeVueValue(undefined)).toStrictEqual([{ selector: '> *' }]);
 	});
 
 	it('Normalizes value written as single string', () => {
