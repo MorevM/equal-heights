@@ -1,23 +1,16 @@
-import { isString, isArray } from '@morev/helpers';
 import { EqualHeights } from '@morev/equal-heights'; // eslint-disable-line import/no-unresolved
+import { normalizeVueValue } from './utility/normalize-vue-value.js';
 
 const equalHeights = new EqualHeights();
-const normalizeValue = (value) => (
-	isString(value)
-		? [{ selector: value }]
-		: isArray(value) && !value.some((val) => !isString(val))
-			? value.map((selector) => ({ selector }))
-			: [value].flat()
-);
 
 const directive = {
 	bind(el, { value }) {
-		normalizeValue(value).forEach(({ selector, options = {} }) => {
+		normalizeVueValue(value).forEach(({ selector, options = {} }) => {
 			equalHeights.add({ selector, options: { ...options, parent: el } });
 		});
 	},
 	unbind(el, { value }) {
-		normalizeValue(value).forEach(({ selector }) => {
+		normalizeVueValue(value).forEach(({ selector }) => {
 			equalHeights.remove(selector, el);
 		});
 	},
