@@ -2,7 +2,7 @@
 	"name": "@morev/equal-heights",
 	"description": "JavaScript plugin allows setting the equal height for different elements.",
 	"type": "module",
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"private": false,
 	"engines": {
 		"node": "^14.17.0 || >=16.0.0"

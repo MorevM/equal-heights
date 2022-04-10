@@ -1,6 +1,12 @@
 
 
-### [0.1.2](https://github.com/MorevM/equal-heights/compare/v0.1.1...v0.1.2) (2022-04-10)
+### [0.1.3](https://github.com/MorevM/equal-heights/compare/v0.1.2...v0.1.3) (2022-04-10)
+
+
+### Bug fixes
+
+* Correct `checkNode` in mutation observer ([851e9b2](https://github.com/MorevM/equal-heights/commit/851e9b28831298b15a1f2eb345b2c17c66bd3228))
+* Observe with ResizeObserver for elements added via MutationObserver ([1b62b8f](https://github.com/MorevM/equal-heights/commit/1b62b8f67f45ed3fd0ae415e9a30f7beada3ff82))### [0.1.2](https://github.com/MorevM/equal-heights/compare/v0.1.1...v0.1.2) (2022-04-10)
 
 
 ### Bug fixes
