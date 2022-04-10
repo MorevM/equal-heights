@@ -25,4 +25,4 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default { install };
-export { directive as EqualHeights };
+export { directive };
