@@ -1,6 +1,11 @@
 
 
-### [0.1.1](https://github.com/MorevM/equal-heights/compare/v0.1.0...v0.1.1) (2022-04-10)
+### [0.1.2](https://github.com/MorevM/equal-heights/compare/v0.1.1...v0.1.2) (2022-04-10)
+
+
+### Bug fixes
+
+* Correct filename for `postinstall` script ([f00ea48](https://github.com/MorevM/equal-heights/commit/f00ea4827f396ba842d14141c72d5ed05a505292))### [0.1.1](https://github.com/MorevM/equal-heights/compare/v0.1.0...v0.1.1) (2022-04-10)
 
 
 ### CI improvements
