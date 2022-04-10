@@ -1,6 +1,6 @@
 {
 	"name": "@morev/equal-heights",
-	"description": "The JavaScript plugin allows setting the equal height for different elements.",
+	"description": "JavaScript plugin allows setting the equal height for different elements.",
 	"type": "module",
 	"version": "0.0.0",
 	"private": false,
@@ -16,6 +16,12 @@
 		"name": "Maxim Morev",
 		"email": "max.seainside@gmail.com"
 	},
+	"contributors": [
+		{
+			"name": "Andrey Litvinov",
+			"email": "fro1d616@gmail.com"
+		}
+	],
 	"homepage": "https://github.com/MorevM/equal-heights#readme",
 	"repository": {
 		"type": "git",
