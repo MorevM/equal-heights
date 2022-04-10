@@ -285,7 +285,7 @@ class EqualHeights {
 
 				const checkNode = (node) => (
 					isNode(node) && queries.some(([selector, parents]) => (
-						(selector === '> *' || node.matches(selector)) && parents.some((parent) => (
+						(selector === '> *' || node.matches(selector) || node.querySelector(selector)) && parents.some((parent) => (
 							parent === this._options.parent || parent.contains(node)
 						))
 					))
