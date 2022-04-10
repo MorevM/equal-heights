@@ -17,6 +17,7 @@ jobs:
           node-version: '16'
           cache: yarn
           scope: '@morev'
+          registry-url: https://registry.npmjs.org
 
       - name: Install dependencies
         run: yarn install
