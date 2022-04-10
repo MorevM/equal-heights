@@ -40,4 +40,4 @@ hooks:
   before:init:
     - yarn lint:fix
   after:init:
-    - yarn test
+    - yarn test:unit
