@@ -1,4 +1,4 @@
-import { EqualHeights } from '@morev/equal-heights'; // eslint-disable-line import/no-unresolved
+import { EqualHeights } from './equal-heights.js';
 import { normalizeVueValue } from './utility/normalize-vue-value.js';
 
 const equalHeights = new EqualHeights();
