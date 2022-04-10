@@ -34,7 +34,7 @@ const processFiles = (...files) => files.reduce((acc, entry) => {
 					presets: [['@babel/preset-env', { useBuiltIns: false }]],
 					// plugins: [['@babel/plugin-transform-runtime', { corejs: 3 }]],
 				}),
-				// terser(),
+				terser(),
 			],
 		});
 	});
