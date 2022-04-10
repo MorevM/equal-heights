@@ -17,7 +17,7 @@ const DEFAULTS = {
 	isDisabled: () => false,
 	resizeObserver: true,
 	mutationObserver: true,
-	parent: document.body,
+	parent: typeof document === 'undefined' ? {} : document.body,
 };
 
 class MoreMatchHeight {
@@ -63,6 +63,7 @@ class MoreMatchHeight {
 	 * @param   {HTMLElement}   [options.parent]             Common parent element of a given elements.
 	 */
 	constructor(options = {}) {
+		if (typeof document === 'undefined') return;
 		this._options = defaults(DEFAULTS, options);
 
 		this._initObservers();
