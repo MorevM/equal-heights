@@ -8,71 +8,37 @@ const ROOT_PATH = path.resolve('./').replace(/\\/g, '/');
 const SRC_PATH = `${ROOT_PATH}/src`;
 const DIST_PATH = `${ROOT_PATH}/dist`;
 
-const esm = (entry) => ({
-	input: `${SRC_PATH}/${entry}`,
-	output: {
-		file: `${DIST_PATH}/esm/${entry}`,
-		format: 'esm',
-		exports: 'named',
-		sourcemap: true,
-	},
-	external: [
-		'@morev/helpers',
-		'@morev/equal-heights',
-	],
-	plugins: [
-		resolve(),
-		commonjs(),
-		// terser(),
-	],
-});
-
-const cjs = (entry) => ({
-	input: `${SRC_PATH}/${entry}`,
-	output: {
-		file: `${DIST_PATH}/cjs/${entry}`,
-		format: 'cjs',
-		exports: 'named',
-		sourcemap: true,
-	},
-	external: [
-		'@morev/helpers',
-		'@morev/equal-heights',
-	],
-	plugins: [
-		resolve(),
-		commonjs(),
-		// terser(),
-	],
-});
-
-const umd = (entry, name) => ({
-	input: `${SRC_PATH}/${entry}`,
-	output: {
-		file: `${DIST_PATH}/umd/${entry}`,
-		format: 'umd',
-		name,
-		sourcemap: false,
-	},
-	plugins: [
-		resolve(),
-		commonjs(),
-		babel({
-			babelHelpers: 'runtime',
-			exclude: new RegExp('/node_modules/'),
-			babelrc: false,
-			presets: [['@babel/preset-env', { useBuiltIns: false }]],
-			plugins: [['@babel/plugin-transform-runtime', { corejs: 3 }]],
-		}),
-		// terser(),
-	],
-});
-
-export default [
-	esm('equal-heights.js'),
-	esm('equal-heights-vue.js'),
-	cjs('equal-heights.js'),
-	cjs('equal-heights-vue.js'),
-	umd('equal-heights.js', 'EqualHeights'),
-	umd('equal-heights-vue.js', 'EqualHeights'),
+const mappings = [
+	{ format: 'esm', extension: 'mjs' },
+	{ format: 'cjs', extension: 'cjs' },
 ];
+
+const processFiles = (...files) => files.reduce((acc, entry) => {
+	mappings.forEach(({ format, extension }) => {
+		acc.push({
+			input: `${SRC_PATH}/${entry}.js`,
+			output: {
+				file: `${DIST_PATH}/${entry}.${extension}`,
+				format,
+				exports: 'named',
+				sourcemap: true,
+			},
+			external: ['@morev/helpers'],
+			plugins: [
+				resolve(),
+				commonjs(),
+				babel({
+					babelHelpers: 'bundled',
+					exclude: new RegExp('/node_modules/'),
+					babelrc: false,
+					presets: [['@babel/preset-env', { useBuiltIns: false }]],
+					// plugins: [['@babel/plugin-transform-runtime', { corejs: 3 }]],
+				}),
+				// terser(),
+			],
+		});
+	});
+	return acc;
+}, []).flat();
+
+export default processFiles('equal-heights', 'vue2', 'vue3');

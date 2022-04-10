@@ -319,14 +319,16 @@ class MoreMatchHeight {
 	/**
 	 * Adds a new group(s) of elements and (optionally) its specific options.
 	 *
-	 * @param     {string|string[]|object|object[]}   input   The input settings: elements selector, an array of elements selectors,
-	 *                                                        an object structured of {selector: string, options?: object}, or an array of such objects.
+	 * @param     {string|string[]|object|object[]}   input            The input settings: elements selector, an array of elements selectors,
+	 *                                                                 an object structured of {selector: string, options?: object}, or an array of such objects.
+	 *
+	 * @param     {boolean}                           [shouldUpdate]   Whether update the height of elements after adding automatically.
 	 *
 	 * @returns   {EqualHeights}
 	 */
-	add(input) {
+	add(input, shouldUpdate = true) {
 		this._registerElements(input);
-		this.update();
+		shouldUpdate && this.update();
 
 		return this;
 	}

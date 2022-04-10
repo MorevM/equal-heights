@@ -34,16 +34,20 @@
 	],
 	"exports": {
 		".": {
-			"import": "./dist/esm/equal-heights.js",
-			"require": "./dist/cjs/equal-heights.js",
-			"browser": "./dist/umd/equal-heights.js"
+			"import": "./dist/equal-heights.mjs",
+			"require": "./dist/equal-heights.cjs"
 		},
-		"./vue": {
-			"import": "./dist/esm/equal-heights-vue.js",
-			"require": "./dist/cjs/equal-heights-vue.js",
-			"browser": "./dist/umd/equal-heights-vue.js"
+		"./vue2": {
+			"import": "./dist/vue2.mjs",
+			"require": "./dist/vue2.cjs"
+		},
+		"./vue3": {
+			"import": "./dist/vue3.mjs",
+			"require": "./dist/vue3.cjs"
 		}
 	},
+	"main": "./dist/equal-heights.cjs",
+	"module": "./dist/equal-heights.mjs",
 	"types": "./types/equal-heights.d.ts",
 	"scripts": {
 		"dev": "yarn _compile:dev",
