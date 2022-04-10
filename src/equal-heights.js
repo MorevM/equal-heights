@@ -20,7 +20,7 @@ const DEFAULTS = {
 	parent: typeof document === 'undefined' ? {} : document.body,
 };
 
-class MoreMatchHeight {
+class EqualHeights {
 	/**
 	 * Working options.
 	 *
