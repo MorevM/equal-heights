@@ -293,6 +293,18 @@ It feels pretty robust, but if you're worried about, prefer an explicit named im
 > There are also CLI to switch mapping of main export: \
 > `yarn equal-heights-vue-version <version>`, where `<version>` is "2" of "3"
 
+<details>
+  <summary>😥 I got an error "This dependency was not found"</summary>
+
+  For environments that can't resolve `exports` field (such as [Nuxt 2](https://nuxtjs.org/))
+  just replace import with direct path to file:
+
+  ```js
+  import { plugin as EqualHeights } from '@morev/equal-heights/dist/vue.cjs';
+  ```
+
+</details>
+
 ### Global registration
 
 #### Vue 2
