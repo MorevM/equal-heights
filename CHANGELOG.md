@@ -1,6 +1,11 @@
 
 
-## 0.1.0 (2022-04-10)
+### [0.1.1](https://github.com/MorevM/equal-heights/compare/v0.1.0...v0.1.1) (2022-04-10)
+
+
+### CI improvements
+
+* Explicit `registry-url` ([29b2451](https://github.com/MorevM/equal-heights/commit/29b245119c7cfe0ca3862642f5214d07740da876))## 0.1.0 (2022-04-10)
 
 
 ### Features
