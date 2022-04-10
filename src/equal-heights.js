@@ -296,6 +296,31 @@ class EqualHeights {
 					|| [...mutation.removedNodes].some((node) => checkNode(node))
 				));
 
+				// Watch newly added nodes with ResizeObserver if needed
+				// It seems there is no need to unobserve removed items, but issue still not clarified
+				// @see https://github.com/w3c/csswg-drafts/issues/5155
+				// TODO: [2022-05-11] Marked for now as potential problem, keep tracking real stats
+				if (needUpdate && this._options.resizeObserver) {
+					const joinedSelectors = queries.map(([selector]) => selector).join(',');
+					const addedNodes = [...mutations].reduce((acc, mutation) => {
+						const validNodes = [...mutation.addedNodes].filter(node => checkNode(node));
+						if (!validNodes.length) return acc;
+
+						const neededNodes = validNodes.reduce((innerAcc, node) => {
+							// Added element matches itself
+							if (node.matches(joinedSelectors)) innerAcc.push(node);
+							// At least one of inner elements matches because node already marked as valid
+							acc.push(...node.querySelectorAll(joinedSelectors));
+							return innerAcc;
+						}, []);
+
+						acc.push(...neededNodes);
+						return acc;
+					}, []);
+
+					addedNodes.length && this._initElements(addedNodes, true);
+				}
+
 				needUpdate && this.update();
 			})
 			: { observe: noop, disconnect: noop };
