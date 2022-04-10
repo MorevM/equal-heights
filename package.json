@@ -30,12 +30,21 @@
 	],
 	"files": [
 		"dist",
-		"types"
+		"types",
+		"bin",
+		"scripts"
 	],
+	"bin": {
+		"equal-heights-vue-version-switch": "bin/switch.cjs"
+	},
 	"exports": {
 		".": {
 			"import": "./dist/equal-heights.mjs",
 			"require": "./dist/equal-heights.cjs"
+		},
+		"./vue": {
+			"import": "./dist/vue.mjs",
+			"require": "./dist/vue.cjs"
 		},
 		"./vue2": {
 			"import": "./dist/vue2.mjs",
@@ -50,6 +59,7 @@
 	"module": "./dist/equal-heights.mjs",
 	"types": "./types/equal-heights.d.ts",
 	"scripts": {
+		"prepack": "node ./scripts/prepack.cjs",
 		"dev": "yarn _compile:dev",
 		"build": "yarn _compile:prod",
 		"prepare": "husky install ./.husky && yarn _more-sass-clone",
