@@ -91,7 +91,7 @@
 		"_cy:open": "cypress open --config watchForFileChanges=true --env mode=development"
 	},
 	"dependencies": {
-		"@morev/helpers": "^0.9.0"
+		"@morev/helpers": "^0.10.0"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.17.9",

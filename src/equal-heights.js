@@ -8,8 +8,8 @@ import {
 	getElementOffset,
 	getWindowScroll,
 	debounce,
+	getScrollLimit,
 } from '@morev/helpers';
-import { getScrollLimit } from './utility/get-scroll-limit.js';
 
 const DEFAULTS = {
 	byRows: true,
