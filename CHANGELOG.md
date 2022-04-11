@@ -1,6 +1,12 @@
 
 
-### [0.1.3](https://github.com/MorevM/equal-heights/compare/v0.1.2...v0.1.3) (2022-04-10)
+### [0.1.4](https://github.com/MorevM/equal-heights/compare/v0.1.3...v0.1.4) (2022-04-11)
+
+
+### Refactoring
+
+* Move utility functions to shared helpers library ([760a893](https://github.com/MorevM/equal-heights/commit/760a89300bc533b5beeb7bad41fd3047fdecede8))
+* Union vue-related things to single file ([517791f](https://github.com/MorevM/equal-heights/commit/517791fc6fac075ec7a94434c466efa346bad0de))### [0.1.3](https://github.com/MorevM/equal-heights/compare/v0.1.2...v0.1.3) (2022-04-10)
 
 
 ### Bug fixes
