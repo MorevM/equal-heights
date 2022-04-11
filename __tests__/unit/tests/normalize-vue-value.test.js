@@ -1,4 +1,4 @@
-import { normalizeVueValue } from '../../../src/utility/normalize-vue-value.js';
+import { normalizeVueValue } from '../../../src/utility/vue-helpers.js';
 
 describe('normalize-vue-value', () => {
 	it('Returns direct children selector for empty input', () => {
