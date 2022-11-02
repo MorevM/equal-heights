@@ -1,10 +1,10 @@
 import {
-	defaults,
+	mergeObjects,
 	noop,
 	isString,
 	isArray,
 	isEmpty,
-	isNode,
+	isElement,
 	getElementOffset,
 	getWindowScroll,
 	debounce,
@@ -64,7 +64,7 @@ class EqualHeights {
 	 */
 	constructor(options = {}) {
 		if (typeof document === 'undefined') return;
-		this._options = defaults(DEFAULTS, options);
+		this._options = mergeObjects(DEFAULTS, options);
 
 		this._initObservers();
 		this._attachEvents();
@@ -170,7 +170,7 @@ class EqualHeights {
 
 			[input].flat().forEach((group) => {
 				const { selector, options: customOptions = {} } = group;
-				const options = defaults(this._options, customOptions);
+				const options = mergeObjects(this._options, customOptions);
 
 				this._stack.push({ selector, options });
 				this._initElements(this._getElements(selector, options.parent), options.resizeObserver);
@@ -284,7 +284,7 @@ class EqualHeights {
 				if (isEmpty(queries)) return;
 
 				const checkNode = (node) => (
-					isNode(node) && queries.some(([selector, parents]) => (
+					isElement(node) && queries.some(([selector, parents]) => (
 						(selector === '> *' || node.matches(selector) || node.querySelector(selector)) && parents.some((parent) => (
 							parent === this._options.parent || parent.contains(node)
 						))
