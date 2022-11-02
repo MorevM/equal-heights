@@ -1,5 +1,17 @@
 
 
+### [0.1.5](https://github.com/MorevM/equal-heights/compare/v0.1.4...v0.1.5) (2022-11-02)
+
+
+### Chores
+
+* Upgrade all deps to latest ([7754ad2](https://github.com/MorevM/equal-heights/commit/7754ad2efb01f1642799f43c9a540a3be47dc730))
+
+
+### Bug fixes
+
+* Round element offset while calculating with `byRows` option ([d6293a1](https://github.com/MorevM/equal-heights/commit/d6293a17d2066582e2d56573c3fff91856fec8fe))
+
 ### [0.1.4](https://github.com/MorevM/equal-heights/compare/v0.1.3...v0.1.4) (2022-04-11)
 
 
