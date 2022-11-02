@@ -6,8 +6,8 @@
 
 	@include margin(null auto);
 	@include padding(null 15px);
-	@include fluid-prop('padding-top', ($layout-screen-min, 35px), ($layout-screen-max, 70px));
-	@include fluid-prop('padding-bottom', ($layout-screen-min, 35px), ($layout-screen-max, 70px));
+	@include use-fluid-prop('padding-top', ($layout-screen-min, 35px), ($layout-screen-max, 70px));
+	@include use-fluid-prop('padding-bottom', ($layout-screen-min, 35px), ($layout-screen-max, 70px));
 	width: 100%;
 	min-width: $layout-screen-min;
 	max-width: $layout-screen-max;
