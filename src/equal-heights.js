@@ -122,7 +122,7 @@ class EqualHeights {
 			}
 
 			return Object.values(this._getElements(selector, parent).reduce((acc, el) => {
-				const offset = byRows ? getElementOffset(el, 'y') : -1;
+				const offset = byRows ? Math.round(getElementOffset(el, 'y')) : -1;
 
 				acc[offset] ??= [];
 				acc[offset].push(el);
