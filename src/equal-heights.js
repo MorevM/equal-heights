@@ -81,7 +81,7 @@ class EqualHeights {
 	 * @protected
 	 */
 	_getElements(selector, parent) {
-		const actualParent = (parent ?? this._options.parent);
+		const actualParent = (parent || this._options.parent);
 		return selector === '> *'
 			? [...actualParent.children]
 			: [...actualParent.querySelectorAll(selector)];
@@ -124,7 +124,7 @@ class EqualHeights {
 			return Object.values(this._getElements(selector, parent).reduce((acc, el) => {
 				const offset = byRows ? Math.round(getElementOffset(el, 'y')) : -1;
 
-				acc[offset] ??= [];
+				acc[offset] = acc[offset] || [];
 				acc[offset].push(el);
 
 				return acc;
@@ -275,7 +275,7 @@ class EqualHeights {
 			? new MutationObserver((mutations) => {
 				const queries = Object.entries(this._stack.reduce((acc, { selector, options }) => {
 					if (options.mutationObserver) {
-						acc[selector] ??= [];
+						acc[selector] = acc[selector] || [];
 						acc[selector].push(options.parent);
 					}
 					return acc;
@@ -369,7 +369,7 @@ class EqualHeights {
 	remove(selector, parent) {
 		this._resetElements();
 		this._stack = this._stack.filter(({ selector: _selector, options }) => {
-			if (_selector === selector && options.parent === (parent ?? this._options.parent)) {
+			if (_selector === selector && options.parent === (parent || this._options.parent)) {
 				if (options.resizeObserver) {
 					this._getElements(_selector, options.parent).forEach((el) => {
 						this._resizeObserver.unobserve(el);
