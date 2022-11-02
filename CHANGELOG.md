@@ -1,5 +1,12 @@
 
 
+### [0.1.6](https://github.com/MorevM/equal-heights/compare/v0.1.5...v0.1.6) (2022-11-02)
+
+
+### Bug fixes
+
+* Remove nullish coalescing operator from the code ([93caf87](https://github.com/MorevM/equal-heights/commit/93caf878c69046d8a1538b87f4496de32cfab818))
+
 ### [0.1.5](https://github.com/MorevM/equal-heights/compare/v0.1.4...v0.1.5) (2022-11-02)
 
 
