@@ -1,5 +1,12 @@
 
 
+### [0.1.7](https://github.com/MorevM/equal-heights/compare/v0.1.6...v0.1.7) (2022-11-03)
+
+
+### Bug fixes
+
+* Use correct return values using updated `@morev/helpers` ([a232396](https://github.com/MorevM/equal-heights/commit/a232396a8c30b0b6e9b094d5ed835d7fc12d013f))
+
 ### [0.1.6](https://github.com/MorevM/equal-heights/compare/v0.1.5...v0.1.6) (2022-11-02)
 
 
