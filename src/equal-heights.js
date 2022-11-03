@@ -227,7 +227,7 @@ class EqualHeights {
 	 * @protected
 	 */
 	_setupElements() {
-		const { left: scrollX, top: scrollY } = getWindowScroll();
+		const { x: scrollX, y: scrollY } = getWindowScroll('both');
 		this._resetElements();
 
 		this._getMatchElements().forEach((elements) => {
