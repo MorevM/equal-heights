@@ -299,7 +299,7 @@ class EqualHeights {
 				// Watch newly added nodes with ResizeObserver if needed
 				// It seems there is no need to unobserve removed items, but issue still not clarified
 				// @see https://github.com/w3c/csswg-drafts/issues/5155
-				// TODO: [2023-05-11] Marked for now as potential problem, keep tracking real stats
+				// TODO: [2025-05-11] Marked for now as potential problem, keep tracking real stats
 				if (needUpdate && this._options.resizeObserver) {
 					const joinedSelectors = queries.map(([selector]) => selector).join(',');
 					const addedNodes = [...mutations].reduce((acc, mutation) => {
