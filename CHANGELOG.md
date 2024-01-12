@@ -1,5 +1,16 @@
 
 
+## [1.0.0](https://github.com/MorevM/equal-heights/compare/v0.1.7...v1.0.0) (2024-01-12)
+
+
+### ⚠ BREAKING CHANGES
+
+* As updated `@morev/helpers` package includes `ohash` dependency, an additional transpile option may be required.
+
+### Chores
+
+* Upgrade `@morev/helpers` package to latest ([e290cd3](https://github.com/MorevM/equal-heights/commit/e290cd3f77edbac85e5c8615620fd0b8a75ef168))
+
 ### [0.1.7](https://github.com/MorevM/equal-heights/compare/v0.1.6...v0.1.7) (2022-11-03)
 
 
