@@ -1,7 +1,6 @@
 import path from 'path';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import { babel } from '@rollup/plugin-babel';
 import serve from 'rollup-plugin-serve';
 import livereload from 'rollup-plugin-livereload';
 import scss from 'rollup-plugin-scss';
@@ -30,13 +29,6 @@ export default [
 		plugins: [
 			resolve(),
 			commonjs(),
-			babel({
-				babelHelpers: 'runtime',
-				exclude: new RegExp('/node_modules/'),
-				babelrc: false,
-				presets: [['@babel/preset-env', { useBuiltIns: 'usage', corejs: 3 }]],
-				plugins: [['@babel/plugin-transform-runtime']],
-			}),
 			serve({
 				open: false,
 				contentBase: `${PLAYGROUND_PATH}`,
