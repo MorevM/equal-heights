@@ -23,7 +23,7 @@ const processFiles = (...files) => files.reduce((acc, entry) => {
 				exports: 'named',
 				sourcemap: true,
 			},
-			external: ['@morev/helpers'],
+			external: ['@morev/utils'],
 			plugins: [
 				resolve(),
 				commonjs(),

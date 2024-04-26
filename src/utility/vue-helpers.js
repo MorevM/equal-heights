@@ -1,10 +1,4 @@
-import {
-	isArray,
-	isEmpty,
-	isObject,
-	isString,
-	toArray,
-} from '@morev/helpers';
+import { isArray, isEmpty, isObject, isString, toArray } from '@morev/utils';
 import { EqualHeights } from '../equal-heights.js';
 
 let equalHeights = null;

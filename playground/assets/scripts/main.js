@@ -1,4 +1,4 @@
-import { randomInteger } from '@morev/helpers';
+import { randomInteger } from '@morev/utils';
 import { EqualHeights } from '../../../src/equal-heights.js';
 import { EqualHeightsModel } from '../../../__tests__/integration/models/equalHeights.model.js';
 

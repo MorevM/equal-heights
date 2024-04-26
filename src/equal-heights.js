@@ -1,15 +1,4 @@
-import {
-	mergeObjects,
-	noop,
-	isString,
-	isArray,
-	isEmpty,
-	isElement,
-	getElementOffset,
-	getWindowScroll,
-	debounce,
-	getScrollLimit,
-} from '@morev/helpers';
+import { mergeObjects, noop, isString, isArray, isEmpty, isElement, getElementOffset, getWindowScroll, debounce, getScrollLimit } from '@morev/utils';
 
 const DEFAULTS = {
 	byRows: true,
