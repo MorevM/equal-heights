@@ -1,5 +1,9 @@
 
 
+### [2.0.1](https://github.com/MorevM/equal-heights/compare/v2.0.0...v2.0.1) (2024-05-24)
+
+No notable changes in this release.
+
 ## [2.0.0](https://github.com/MorevM/equal-heights/compare/v1.0.0...v2.0.0) (2024-05-24)
 
 
