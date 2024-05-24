@@ -1,5 +1,25 @@
 
 
+## [2.0.0](https://github.com/MorevM/equal-heights/compare/v1.0.0...v2.0.0) (2024-05-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* The library is no longer transpiled and minified.
+Transform to suit your needs and minify on your side.
+
+### Chores
+
+* Mark the package as side-effects free ([ab9f5da](https://github.com/MorevM/equal-heights/commit/ab9f5dab757a2001655433ca302ef99f99f1b7d7))
+* Remove babel & terser plugins ([86a66a5](https://github.com/MorevM/equal-heights/commit/86a66a55cde2399062af1337ce457e1d81432bd7))
+* Replace legacy `@morev/helpers` dependency with `@morev/utils` ([005c2ed](https://github.com/MorevM/equal-heights/commit/005c2edfde9778f3865933c3e6e3679557303282))
+
+
+### CI improvements
+
+* Inject latest changelog entry into GH release ([37212fc](https://github.com/MorevM/equal-heights/commit/37212fc91c44a212105358d5fc0d6858b489075a))
+* Run actions using Node 20 ([5a84b00](https://github.com/MorevM/equal-heights/commit/5a84b00d3756a7ba0bc1acb506468654c3ede538))
+
 ## [1.0.0](https://github.com/MorevM/equal-heights/compare/v0.1.7...v1.0.0) (2024-01-12)
 
 
