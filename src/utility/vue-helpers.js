@@ -23,7 +23,7 @@ export const normalizeVueValue = (value) => {
 };
 
 export const mounted = (el, { value }) => {
-	if (!equalHeights) equalHeights = new EqualHeights();
+	equalHeights ||= new EqualHeights();
 	normalizeVueValue(value).forEach(({ selector, options = {} }) => {
 		equalHeights.add({ selector, options: { ...options, parent: el } }, false);
 		// There is no guarantee that children are already mounted, so
@@ -32,7 +32,7 @@ export const mounted = (el, { value }) => {
 };
 
 export const unmounted = (el, { value }) => {
-	if (!equalHeights) equalHeights = new EqualHeights();
+	equalHeights ||= new EqualHeights();
 	normalizeVueValue(value).forEach(({ selector }) => {
 		equalHeights.remove(selector, el);
 	});

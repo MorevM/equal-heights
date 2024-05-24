@@ -11,7 +11,9 @@ describe('EqualHeights', () => {
 
 	after(() => {
 		cy.get('@equalHeights').invoke('reset');
-		cy.get('[name="equalHeights"]').uncheck().check().blur();
+		cy.get('[name="equalHeights"]').uncheck();
+		cy.get('[name="equalHeights"]').check();
+		cy.get('[name="equalHeights"]').blur();
 		cy.scrollTo(0, 0);
 	});
 

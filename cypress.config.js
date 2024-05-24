@@ -9,7 +9,6 @@ export default defineConfig({
 	viewportWidth: 1280,
 	viewportHeight: 720,
 	e2e: {
-		setupNodeEvents(on, config) {},
 		baseUrl: 'http://localhost:3001',
 		specPattern: './__tests__/integration/tests/**/*.cy.{js,jsx,ts,tsx}',
 		supportFile: './__tests__/integration/bootstrap.js',

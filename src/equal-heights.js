@@ -113,7 +113,7 @@ class EqualHeights {
 			return Object.values(this._getElements(selector, parent).reduce((acc, el) => {
 				const offset = byRows ? Math.round(getElementOffset(el, 'y')) : -1;
 
-				acc[offset] = acc[offset] || [];
+				acc[offset] ||= [];
 				acc[offset].push(el);
 
 				return acc;
@@ -138,15 +138,12 @@ class EqualHeights {
 	_registerElements(input) {
 		/* eslint-disable padded-blocks */
 		if (isString(input)) {
-
 			const selector = input;
 			const options = this._options;
 
 			this._stack.push({ selector, options });
 			this._initElements(this._getElements(selector, options.parent), options.resizeObserver);
-
 		} else if (isArray(input) && !input.some((val) => !isString(val))) {
-
 			const selectors = input;
 			const options = this._options;
 
@@ -154,9 +151,7 @@ class EqualHeights {
 				this._stack.push({ selector, options });
 				this._initElements(this._getElements(selector, options.parent), options.resizeObserver);
 			});
-
 		} else {
-
 			[input].flat().forEach((group) => {
 				const { selector, options: customOptions = {} } = group;
 				const options = mergeObjects(this._options, customOptions);
@@ -164,7 +159,6 @@ class EqualHeights {
 				this._stack.push({ selector, options });
 				this._initElements(this._getElements(selector, options.parent), options.resizeObserver);
 			});
-
 		}
 		/* eslint-enable padded-blocks */
 	}
@@ -264,7 +258,7 @@ class EqualHeights {
 			? new MutationObserver((mutations) => {
 				const queries = Object.entries(this._stack.reduce((acc, { selector, options }) => {
 					if (options.mutationObserver) {
-						acc[selector] = acc[selector] || [];
+						acc[selector] ||= [];
 						acc[selector].push(options.parent);
 					}
 					return acc;
@@ -335,7 +329,6 @@ class EqualHeights {
 	 *
 	 * @param     {string|string[]|object|object[]}   input            The input settings: elements selector, an array of elements selectors,
 	 *                                                                 an object structured of {selector: string, options?: object}, or an array of such objects.
-	 *
 	 * @param     {boolean}                           [shouldUpdate]   Whether update the height of elements after adding automatically.
 	 *
 	 * @returns   {EqualHeights}
